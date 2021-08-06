@@ -4,14 +4,12 @@ import mongoose from  'mongoose'
 
 const studentSchema = new mongoose.Schema({
     regNo : Number,
-    firstName: String,
-    LastName: String,
+    studentName: String,
     grade: String,
     section: {
         type: String,
         default: 'A',
-    },
-    subjects: [String]
+    }
 })
 
 // This is model

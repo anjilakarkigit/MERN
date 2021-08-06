@@ -6,12 +6,12 @@ import studentRoutes from'./routes/student.js'
 
 const app = express()
 
-app.use('/students', studentRoutes )
+app.use(cors());
 
 app.use(bodyParser.json({limit: "20mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
 
-app.use(cors());
+app.use('/students', studentRoutes )
 
 const CONNECTION_URL = "mongodb+srv://anjila:Password@cluster0.8kzsc.mongodb.net/MERN?retryWrites=true&w=majority";
 

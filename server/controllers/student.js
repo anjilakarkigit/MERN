@@ -1,4 +1,4 @@
-import  StudentData  from '../models/student.js'
+import  StudentData  from '../models/student.js';
 
 export const getStudents = async(req, res)=>{
     try{
@@ -16,7 +16,7 @@ export const getStudents = async(req, res)=>{
 export const createStudent = async (req, res)=>{
     
         const student = req.body
-        const newStudent = new  StudentData(student)
+        const newStudent = new StudentData(student)
     try{
         await newStudent.save()
         //201 indicates that the request has been completed and has led to the creation of a resource
@@ -25,5 +25,7 @@ export const createStudent = async (req, res)=>{
         //409->a request conflict with current state of the target resource. occurs with put request
         res.status(409).json({message: error.message})
     }
+
 }
+
 
