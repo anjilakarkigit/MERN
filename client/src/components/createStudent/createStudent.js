@@ -26,7 +26,7 @@ export default function Create() {
 
   const createStudent = ()=>{
     axios.post('http://localhost:5000/students', student).then(()=>{
-      console.log('Data has been recieved!')
+      window.location.reload(false);
     }).catch(()=>{
       alert('Error Handling the data!')
     })

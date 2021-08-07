@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import studentRoutes from'./routes/student.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 
@@ -13,7 +16,7 @@ app.use(bodyParser.urlencoded({limit: "20mb", extended: true}));
 
 app.use('/students', studentRoutes )
 
-const CONNECTION_URL = "mongodb+srv://anjila:Password@cluster0.8kzsc.mongodb.net/MERN?retryWrites=true&w=majority";
+const CONNECTION_URL = process.env.CONNECTION_URL
 
 const PORT = process.env.PORT || 5000
 
